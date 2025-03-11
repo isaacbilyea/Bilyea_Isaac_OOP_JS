@@ -19,7 +19,14 @@ function addImage() {
     imageCard.appendChild(img);
     imageCard.appendChild(caption);  
     imageContainer.appendChild(imageCard);
+
+    Draggable.create(imageCard, {
+        type: "x,y",
+        inertia: true,
+        bounds: window,
+    });
 }
 
 submitButton.addEventListener("click", addImage);
 
+gsap.registerPlugin(Draggable);
