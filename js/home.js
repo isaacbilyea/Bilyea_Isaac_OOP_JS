@@ -1,14 +1,25 @@
 const imageInput = document.querySelector("#image-input");
+const captionInput = document.querySelector("#caption-input");
+const submitButton = document.querySelector("#submit-button");
 const imageContainer = document.querySelector("#image-container");
 
-function showImage(e) {
-    const file = e.target.files[0];
+function addImage() {
+    const file = imageInput.files[0];
     const img = document.createElement("img");
+    const caption = document.createElement("p");
+    const imageCard = document.createElement("div");
     
     img.src = URL.createObjectURL(file);
     img.style.display = "block";
-    imageContainer.appendChild(img);
+
+    caption.textContent = captionInput.value;
+
+    imageCard.classList.add("image-card");
+
+    imageCard.appendChild(img);
+    imageCard.appendChild(caption);  
+    imageContainer.appendChild(imageCard);
 }
 
-imageInput.addEventListener("change", showImage);
+submitButton.addEventListener("click", addImage);
 
