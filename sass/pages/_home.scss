@@ -10,7 +10,7 @@
 
         p {
             font-family: "Permanent Marker", cursive;
-            font-size: 1.25rem;
+            font-size: 2rem;
         }
 
         &::before {
@@ -25,45 +25,61 @@
             left: 50%;
             transform: scale(1) translateX(-50%) translateY(-100%) rotate(20deg);
             transform-origin: center;
-            animation: stickTape 0.5s ease-in forwards;
+            animation: stickTape 0.25s ease-in forwards;
             opacity: 0;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
         }
     
     }
 }
 
 .image-card.dragging::before {
-    animation: stickTapeReverse 0.3s ease-in forwards !important;
+    animation: stickTapeReverse 150ms ease-in forwards !important;
 }
 
 @keyframes stickTape {
     0% { 
-        transform: scale(1.2) translate(-40%, 0%) rotate(-20deg);
+        transform: scale(1.2) translate(-40%, 20%) rotate(20deg);
         opacity: 0;
+    }
+    20% {
+        opacity: 0.4;
+        transform: scale(1.15) translate(-42%, 15%) rotate(15deg);
     }
     40% {
         opacity: 0.7;
-        transform: scale(1.1) translate(-45%, 0%) rotate(-15deg);
+        transform: scale(1.1) translate(-45%, 10%) rotate(10deg);
     }
-    70% {
-        transform: scale(0.95) translate(-50%, 0%) rotate(-5deg);
+    60% {
+        opacity: 0.85;
+        transform: scale(1.05) translate(-48%, 5%) rotate(8deg);
+    }
+    75% {
+        transform: scale(1.02) translate(-50%, 2%) rotate(4deg);
+        opacity: 0.95;
+    }
+    90% {
+        transform: scale(1.01) translate(-50%, 1%) rotate(2deg);
+        opacity: 0.98;
     }
     100% { 
-        transform: scale(1) translate(-50%, 0%) rotate(-8deg);
+        transform: scale(1) translate(-50%, 0%) rotate(0);
         opacity: 1;
     }
 }
 
 @keyframes stickTapeReverse {
     0% { 
-        transform: scale(1) translate(-50%, 0%) rotate(-8deg);
-        opacity: 1;
-    }
-    90% {
+        transform: scale(1) translate(-50%, 0%) rotate(0);
         opacity: 1;
     }
     100% { 
-        transform: scale(1.2) translate(-40%, 0%) rotate(-20deg);
+        transform: scale(1.1) translate(-50%, 10%) rotate(10deg);
         opacity: 0;
     }
 }
+

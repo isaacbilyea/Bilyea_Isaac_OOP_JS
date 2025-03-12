@@ -1,5 +1,6 @@
 const imageInput = document.querySelector("#image-input");
 const captionInput = document.querySelector("#caption-input");
+const filterSelect = document.querySelector("#filter");
 const submitButton = document.querySelector("#submit-button");
 const imageContainer = document.querySelector("#image-container");
 
@@ -21,6 +22,11 @@ function addImage() {
     imageCard.appendChild(img);
     imageCard.appendChild(caption);  
     imageContainer.appendChild(imageCard);
+
+    const selectedFilter = filterSelect.value;
+    if (selectedFilter !== "") {
+        img.classList.add(selectedFilter);
+    }
 
     Draggable.create(imageCard, {
         type: "x,y",
