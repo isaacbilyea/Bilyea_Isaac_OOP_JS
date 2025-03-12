@@ -17,16 +17,22 @@ export function modalForm() {
         modal.style.display = 'none';
     }
 
+    function selectModal(e) {
+        
+        const clickedBtn = e.currentTarget;
+    
+        mediaTypeBtns.forEach(btn => 
+            btn.classList.remove('active')
+        );
+        
+        clickedBtn.classList.add('active');
+    }
+
     addMediaBtn.addEventListener('click', openModal);
     closeBtn.addEventListener('click', closeModal);
-
+    
     mediaTypeBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            mediaTypeBtns.forEach(btn => 
-                btn.classList.remove('active')
-            );
-            btn.classList.add('active');
-        });
+        btn.addEventListener('click', selectModal);
     });
 
 }
