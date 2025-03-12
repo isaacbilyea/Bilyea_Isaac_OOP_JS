@@ -1,5 +1,6 @@
 export function createCard() {
 
+    //VARIABLES
     const imageInput = document.querySelector("#image-input");
     const captionInput = document.querySelector("#caption-input");
     const filterSelect = document.querySelector("#filter");
@@ -7,6 +8,7 @@ export function createCard() {
 
     gsap.registerPlugin(Draggable);
 
+    //FUNCTIONS
     function addImage() {
         const file = imageInput.files[0];
         const img = document.createElement("img");

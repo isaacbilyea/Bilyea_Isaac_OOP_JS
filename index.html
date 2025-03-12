@@ -18,12 +18,14 @@
 
 <body>
 
+    <!-- Controls -->
     <div id="controls-con">
         <h1>FrameIt 📷</h1>
         <p>Create your digital memory board</p>
         <button id="add-media-btn">Add Media +</button>
     </div>
 
+    <!-- Modal -->
     <div id="modals">
         <div id="modal-con">
             <span id="close-modal">&times;</span>
@@ -44,9 +46,55 @@
                 </button>
             </div>
 
+            <!-- Forms -->
+            <div id="media-forms">
+                <!-- Photos -->
+                <form class="media-form" id="photo-form" hidden>
+                    <input type="file" accept="image/*" required>
+                    <input type="text" placeholder="Add a caption" required>
+                    <select>
+                        <option value="">No Filter</option>
+                        <option value="sepia">Sepia</option>
+                        <option value="grayscale">Grayscale</option>
+                        <option value="vintage">Vintage</option>
+                    </select>
+                    <button type="submit">Add Photo</button>
+                </form>
+
+                <!-- Polaroids -->
+                <form class="media-form" id="polaroid-form" hidden>
+                    <input type="file" accept="image/*" required>
+                    <input type="text" placeholder="Add a caption" required>
+                    <input type="date" required>
+                    <button type="submit">Add Polaroid</button>
+                </form>
+
+                <!-- Sticky Notes -->
+                <form class="media-form" id="note-form" hidden>
+                    <textarea placeholder="Write your note..." required></textarea>
+                    <select required>
+                        <option value="yellow">Yellow</option>
+                        <option value="pink">Pink</option>
+                        <option value="blue">Blue</option>
+                        <option value="green">Green</option>
+                    </select>
+                    <button type="submit">Add Note</button>
+                </form>
+
+                <!-- Stickers -->
+                <div id="sticker-form" class="sticker-grid" hidden>
+                    <button type="button" class="sticker-btn" data-emoji="❤️">❤️</button>
+                    <button type="button" class="sticker-btn" data-emoji="⭐">⭐</button>
+                    <button type="button" class="sticker-btn" data-emoji="🌟">🌟</button>
+                    <button type="button" class="sticker-btn" data-emoji="✨">✨</button>
+                    <button type="button" class="sticker-btn" data-emoji="🌸">🌸</button>
+                    <button type="button" class="sticker-btn" data-emoji="🎵">🎵</button>
+                </div>
+            </div>
         </div>
     </div>
 
+    <!-- Media Board -->
     <div id="image-container"></div>
 </body>
 
