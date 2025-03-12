@@ -25,6 +25,17 @@
             <input type="file" id="image-input" accept="image/*">
             <label for="caption-input">Add Caption</label>
             <input type="text" id="caption-input" placeholder="Caption">
+            <select id="filter" name="filter">
+                <option value="" disabled selected>Choose Filter</option>
+                <option value="none">No Filter</option>
+                <option value="sepia">Sepia</option>
+                <option value="grayscale">Black &amp; White</option>
+                <option value="vintage">Vintage</option>
+                <option value="blur">Blur</option>
+                <option value="contrast">High Contrast</option>
+                <option value="bright">Bright</option>
+                <option value="shadow">Shadow</option>
+            </select>
             <button id="submit-button">Add</button>
         </div>
         <div id="image-container"></div>
