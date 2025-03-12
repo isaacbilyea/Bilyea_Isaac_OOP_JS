@@ -1,10 +1,69 @@
 @use '../abstracts' as a;
 
-#image-container {
 
+#image-container {
     .image-card {
         padding: 2rem;
         background-color: white;
         width: fit-content;
+        position: relative;
+
+        p {
+            font-family: "Permanent Marker", cursive;
+            font-size: 1.25rem;
+        }
+
+        &::before {
+            position: absolute;
+            content: ''; 
+            background-image: url('../images/tape-1.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 10rem;  
+            height: 10rem; 
+            top: -2rem;  
+            left: 50%;
+            transform: scale(1) translateX(-50%) translateY(-100%) rotate(20deg);
+            transform-origin: center;
+            animation: stickTape 0.5s ease-in forwards;
+            opacity: 0;
+        }
+    
+    }
+}
+
+.image-card.dragging::before {
+    animation: stickTapeReverse 0.3s ease-in forwards !important;
+}
+
+@keyframes stickTape {
+    0% { 
+        transform: scale(1.2) translate(-40%, 0%) rotate(-20deg);
+        opacity: 0;
+    }
+    40% {
+        opacity: 0.7;
+        transform: scale(1.1) translate(-45%, 0%) rotate(-15deg);
+    }
+    70% {
+        transform: scale(0.95) translate(-50%, 0%) rotate(-5deg);
+    }
+    100% { 
+        transform: scale(1) translate(-50%, 0%) rotate(-8deg);
+        opacity: 1;
+    }
+}
+
+@keyframes stickTapeReverse {
+    0% { 
+        transform: scale(1) translate(-50%, 0%) rotate(-8deg);
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% { 
+        transform: scale(1.2) translate(-40%, 0%) rotate(-20deg);
+        opacity: 0;
     }
 }

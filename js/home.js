@@ -3,6 +3,8 @@ const captionInput = document.querySelector("#caption-input");
 const submitButton = document.querySelector("#submit-button");
 const imageContainer = document.querySelector("#image-container");
 
+gsap.registerPlugin(Draggable);
+
 function addImage() {
     const file = imageInput.files[0];
     const img = document.createElement("img");
@@ -24,9 +26,13 @@ function addImage() {
         type: "x,y",
         inertia: true,
         bounds: window,
+        onDragStart: function(){
+            this.target.classList.add("dragging");
+        },
+        onDragEnd: function() {
+            this.target.classList.remove("dragging");
+        }
     });
 }
 
 submitButton.addEventListener("click", addImage);
-
-gsap.registerPlugin(Draggable);
