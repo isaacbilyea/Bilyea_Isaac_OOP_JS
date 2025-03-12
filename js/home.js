@@ -1,7 +1,6 @@
 const imageInput = document.querySelector("#image-input");
 const captionInput = document.querySelector("#caption-input");
 const filterSelect = document.querySelector("#filter");
-const submitButton = document.querySelector("#submit-button");
 const imageContainer = document.querySelector("#image-container");
 
 gsap.registerPlugin(Draggable);
@@ -31,7 +30,7 @@ function addImage() {
     Draggable.create(imageCard, {
         type: "x,y",
         inertia: true,
-        bounds: window,
+        bounds: imageContainer,
         onDragStart: function(){
             this.target.classList.add("dragging");
         },
@@ -41,4 +40,3 @@ function addImage() {
     });
 }
 
-submitButton.addEventListener("click", addImage);

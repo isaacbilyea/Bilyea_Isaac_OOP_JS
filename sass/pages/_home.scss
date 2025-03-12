@@ -1,12 +1,27 @@
 @use '../abstracts' as a;
 
+#controls-con {
+    height: 8rem;
+}
+
+
 
 #image-container {
+    background-image: url('../images/viewfinder.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: calc(100% - 4rem);
+    height: calc(100vh - 12rem);
+    margin: 2rem;
+    position: relative;
+
     .image-card {
         padding: 2rem;
         background-color: white;
         width: fit-content;
         position: relative;
+        transform: scale(0.6);
 
         p {
             font-family: "Permanent Marker", cursive;
