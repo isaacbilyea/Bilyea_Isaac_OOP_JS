@@ -8,18 +8,25 @@ export function modalForm() {
     const imageContainer = document.querySelector("#image-container");
     const closeBtn = document.querySelector('#close-modal');
     const mediaTypeBtns = document.querySelectorAll('.media-type-btn');
-    const mediaForms = document.querySelectorAll('.media-form, .sticker-grid');
+    const mediaForms = document.querySelectorAll('.media-form, #sticker-form');
 
     //FUNCTIONS
     function openModal() {
+        hideAllForms();
         modal.style.display = 'block';
         modalCon.classList.add('active');
     }
 
     function closeModal() {
+        hideAllForms();
         modalCon.classList.remove('active');
         modal.style.display = 'none';
-        hideAllForms();
+    }
+
+    function outsideModal(e) {
+        if (e.target === modal) {
+            closeModal();
+        }
     }
 
     function resetBoard() {
@@ -54,12 +61,10 @@ export function modalForm() {
     addMediaBtn.addEventListener('click', openModal);
     resetMediaBtn.addEventListener('click', resetBoard);
     closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', outsideModal);
     
     mediaTypeBtns.forEach(btn => {
         btn.addEventListener('click', selectMediaType);
     });
 
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) closeModal();
-    });
 }

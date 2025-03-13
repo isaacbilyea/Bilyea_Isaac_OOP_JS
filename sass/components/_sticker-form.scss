@@ -1,0 +1,22 @@
+@use '../abstracts' as a;
+
+#sticker-form {
+
+    .sticker-btn {
+        font-size: 2rem;
+        padding: 1rem;
+        margin: 0.25rem;
+        border: 1px solid #ddd;
+        border-radius: 0.5rem;
+        background: white;
+        transition: transform 0.2s ease;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        &:active {
+            transform: scale(0.95);
+        }
+    }
+}
