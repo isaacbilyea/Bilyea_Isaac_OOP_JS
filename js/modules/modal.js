@@ -43,7 +43,7 @@ export function modalForm() {
     function showSelectedForm(type) {
         hideAllForms();
         const selectedForm = document.querySelector(`#${type}-form`);
-        selectedForm.style.display = 'block';
+        selectedForm.style.display = 'flex';
         selectedForm.classList.add('active');
     }
 
