@@ -4,6 +4,8 @@ export function modalForm() {
     const modal = document.querySelector('#modals');
     const modalCon = document.querySelector('#modal-con');
     const addMediaBtn = document.querySelector('#add-media-btn');
+    const resetMediaBtn = document.querySelector('#reset-media-btn');
+    const imageContainer = document.querySelector("#image-container");
     const closeBtn = document.querySelector('#close-modal');
     const mediaTypeBtns = document.querySelectorAll('.media-type-btn');
     const mediaForms = document.querySelectorAll('.media-form, .sticker-grid');
@@ -18,6 +20,10 @@ export function modalForm() {
         modalCon.classList.remove('active');
         modal.style.display = 'none';
         hideAllForms();
+    }
+
+    function resetBoard() {
+        imageContainer.innerHTML = '';
     }
 
     function hideAllForms() {
@@ -46,6 +52,7 @@ export function modalForm() {
 
     //EVENT LISTENERS
     addMediaBtn.addEventListener('click', openModal);
+    resetMediaBtn.addEventListener('click', resetBoard);
     closeBtn.addEventListener('click', closeModal);
     
     mediaTypeBtns.forEach(btn => {
