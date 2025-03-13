@@ -1,3 +1,5 @@
+@use '../abstracts' as a;
+
 #modals {
     display: none;
     position: fixed;
@@ -33,13 +35,14 @@
             color: #666;
             
             &:hover {
-                color: #333;
+                color: a.$secondary-color;
             }
         }
 
         h2 {
             margin-bottom: 2rem;
-            color: #333;
+            margin-top: 0;
+            color: a.$secondary-color;
         }
 
         #media-types {
@@ -53,7 +56,7 @@
                 flex-direction: column;
                 align-items: center;
                 padding: 1rem;
-                border: 2px solid #ddd;
+                border: 2px solid a.$primary-color;
                 border-radius: 0.5rem;
                 background: white;
                 cursor: pointer;
@@ -65,13 +68,13 @@
                 }
 
                 &:hover {
-                    border-color: #333;
+                    border-color: a.$secondary-color;
                     background: #f9f9f9;
                 }
 
                 &.active {
-                    border-color: #333;
-                    background: #333;
+                    border-color: a.$secondary-color;
+                    background: a.$secondary-color;
                     color: white;
                 }
             }
@@ -79,18 +82,30 @@
     }
 }
 
-#add-media-btn {
-    background: #333;
-    color: white;
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 0.5rem;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: all 0.2s ease;
+.media-form {
+    button[type="submit"] {
+        background: a.$accent-color;
+        color: white;
+        padding: 0.75rem;
+        border: none;
+        border-radius: 0.25rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s ease;
 
-    &:hover {
-        background: #555;
-        transform: translateY(-2px);
+        &:hover {
+            background: #0056b3;
+        }
+    }
+
+    input[type="text"],
+    input[type="file"],
+    input[type="date"],
+    select {
+        padding: 0.75rem;
+        border: 1px solid a.$primary-color;
+        border-radius: 0.25rem;
+        width: 100%;
+        box-sizing: border-box;
     }
 }

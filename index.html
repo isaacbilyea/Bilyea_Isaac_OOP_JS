@@ -75,9 +75,15 @@
 
                 <!-- Polaroids -->
                 <form class="media-form" id="polaroid-form">
-                    <input type="file" accept="image/*" required>
+                    <div>
+                        <label for="polaroid">Select a photo:</label>
+                        <input type="file" accept="image/*" required>
+                    </div>
                     <input type="text" placeholder="Add a caption" required>
-                    <input type="date" required>
+                    <div>
+                        <label for="date">Select a date:</label>
+                        <input type="date" required>
+                    </div>
                     <button type="submit">Add Polaroid</button>
                 </form>
 
