@@ -21,12 +21,8 @@
         }
     }
 
-    select {
-        padding: 0.5rem;
-        border-radius: 0.25rem;
-        background-color: white;
-        border: 1px solid a.$primary-color;
-        margin-top: 0.5rem;
+    input[type=date] {
+        font-family: inherit;
     }
 
     button[type=submit] {

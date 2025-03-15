@@ -57,6 +57,21 @@
                         <label for="photo">Select a photo:</label>
                         <input type="file" accept="image/*" class="image-input" required>
                     </div>
+                    <input type="text" placeholder="Photographers Name" class="caption-input" required>
+                    <div>
+                        <label for="date">Select a date:</label>
+                        <input type="date" id="photo-date" value="2001-04-10" required>
+                    </div>
+
+                    <button type="submit">Add Photo</button>
+                </form>
+
+                <!-- Polaroids -->
+                <form class="media-form" id="polaroid-form">
+                    <div>
+                        <label for="polaroid">Select a photo:</label>
+                        <input type="file" accept="image/*" class="image-input" required>
+                    </div>
                     <input type="text" placeholder="Add a caption" class="caption-input" required>
                     <div>
                         <label for="filter">Select a filter:</label>
@@ -69,20 +84,6 @@
                             <option value="bright">Bright</option>
                             <option value="blur">Blur</option>
                         </select>
-                    </div>
-                    <button type="submit">Add Photo</button>
-                </form>
-
-                <!-- Polaroids -->
-                <form class="media-form" id="polaroid-form">
-                    <div>
-                        <label for="polaroid">Select a photo:</label>
-                        <input type="file" accept="image/*" class="image-input" required>
-                    </div>
-                    <input type="text" placeholder="Add a caption" class="caption-input" required>
-                    <div>
-                        <label for="date">Select a date:</label>
-                        <input type="date" required>
                     </div>
                     <button type="submit">Add Polaroid</button>
                 </form>
