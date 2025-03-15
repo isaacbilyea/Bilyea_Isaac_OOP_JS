@@ -1,4 +1,5 @@
 import { addImage } from './add-image.js';
+import { addSticker } from './add-sticker.js';
 
 export function modalForm() {
 
@@ -12,6 +13,7 @@ export function modalForm() {
     const mediaTypeBtns = document.querySelectorAll('.media-type-btn');
     const mediaForms = document.querySelectorAll('.media-form, #sticker-form');
     const photoForm = document.querySelector('#photo-form');
+    const stickerForm = document.querySelector('#sticker-form');
 
     //FUNCTIONS
     function openModal() {
@@ -64,7 +66,12 @@ export function modalForm() {
         e.preventDefault();
         addImage();
         closeModal();
-        photoForm.reset();
+    }
+
+    function stickerSubmit(e) {
+        const emoji = e.target.dataset.emoji;
+        addSticker(emoji);
+        closeModal();
     }
 
     //EVENT LISTENERS
@@ -78,5 +85,9 @@ export function modalForm() {
     });
 
     photoForm.addEventListener('submit', photoSubmit);
-
+    stickerForm.addEventListener('click', (e) => {
+        if (e.target.classList.contains('sticker-btn')) {
+            stickerSubmit(e);
+        }
+    });
 }
