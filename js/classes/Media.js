@@ -15,6 +15,7 @@ class Media {
         img.src = URL.createObjectURL(imageFile);
         img.style.display = "block";
         this.element.appendChild(img);
+        return img;
     }
 
     addCaption() {
