@@ -1,3 +1,5 @@
+import { addImage } from './add-image.js';
+
 export function modalForm() {
 
     //VARIABLES
@@ -9,6 +11,7 @@ export function modalForm() {
     const closeBtn = document.querySelector('#close-modal');
     const mediaTypeBtns = document.querySelectorAll('.media-type-btn');
     const mediaForms = document.querySelectorAll('.media-form, #sticker-form');
+    const photoForm = document.querySelector('#photo-form');
 
     //FUNCTIONS
     function openModal() {
@@ -57,6 +60,13 @@ export function modalForm() {
         showSelectedForm(mediaType);
     }
 
+    function photoSubmit(e) {
+        e.preventDefault();
+        addImage();
+        closeModal();
+        photoForm.reset();
+    }
+
     //EVENT LISTENERS
     addMediaBtn.addEventListener('click', openModal);
     resetMediaBtn.addEventListener('click', resetBoard);
@@ -66,5 +76,7 @@ export function modalForm() {
     mediaTypeBtns.forEach(btn => {
         btn.addEventListener('click', selectMediaType);
     });
+
+    photoForm.addEventListener('submit', photoSubmit);
 
 }
