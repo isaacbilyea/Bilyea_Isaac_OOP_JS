@@ -1,5 +1,5 @@
 export function addSticker(emoji) {
-    const imageContainer = document.querySelector("#image-container");
+    const imageContainer = document.querySelector("#media-board");
     const stickerElement = document.createElement("div");
     
     stickerElement.classList.add("sticker");
