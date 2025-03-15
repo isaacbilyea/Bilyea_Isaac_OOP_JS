@@ -28,7 +28,7 @@ class Media {
         Draggable.create(this.element, {
             type: "x,y",
             inertia: true,
-            bounds: this.container,
+            bounds: window,
             onDragStart: () => this.element.classList.add("dragging"),
             onDragEnd: () => this.element.classList.remove("dragging")
         });
@@ -40,7 +40,7 @@ class Photo extends Media {
         super(caption);
         this.imageFile = imageFile;
         this.filter = filter;
-        this.element.classList.add('image-card');
+        this.element.classList.add('photo-card');
     }
 
     createContent() {
@@ -55,7 +55,7 @@ class Polaroid extends Media {
     constructor(imageFile, caption) {
         super(caption);
         this.imageFile = imageFile;
-        this.element.classList.add('image-card');
+        this.element.classList.add('polaroid-card');
     }
 
     createContent() {
@@ -66,14 +66,16 @@ class Polaroid extends Media {
 }
 
 class StickyNote extends Media {
-    constructor(caption) {
+    constructor(caption, colour) {
         super(caption);
         this.element.classList.add('sticky-note');
+        this.colour = colour;
     }
 
     createContent() {
         this.addCaption();
         this.addToBoard();
+        this.element.style.backgroundColor = this.colour;
     }
 }
 

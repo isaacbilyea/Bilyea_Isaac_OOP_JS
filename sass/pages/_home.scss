@@ -4,35 +4,51 @@
     margin: 2rem auto;
     @include a.center;
     flex-direction: column;
+    align-items: center;
+    background-color: rgba(255,255,255,0.5);
+    padding: 2rem 4rem;
+    border-style: solid;
+    border-width: 1rem;
+    border-top-color: lighten(#000, 20%);
+    border-right-color: lighten(#000, 0%);
+    border-bottom-color: lighten(#000, 20%);
+    border-left-color: lighten(#000, 0%);
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.6);
 
     h1 {
         margin: 0;
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 
     p {
         margin: 0;
-        font-size: 1.5rem;
+        font-size: 1rem;
+        font-weight: 300;
     }
 
     #controls {
-        margin: 2rem 0;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
         @include a.center;
         gap: 1rem;
 
         .control-btn {
             background: #333;
             color: white;
-            padding: 1rem 2rem;
+            padding: 1rem 1.5rem;
             border: none;
-            border-radius: 0.5rem;
-            font-size: 1.1rem;
+            border-radius: 0.75rem;
+            font-size: 1rem;
             cursor: pointer;
             transition: all 0.2s ease;
         
             &:hover {
                 background: #555;
                 transform: translateY(-2px);
+            }
+
+            &:active {
+                transform: translateY(2px);
             }
         }
     }
