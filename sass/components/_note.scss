@@ -2,13 +2,16 @@
 
 
 .sticky-note {
-    width: 200px;
-    min-height: 200px;
+    width: 11rem;
+    min-height: 11rem;
+    word-break: break-all;
+    max-height: 10rem;
     padding: 1.5rem;
     position: relative;
     background: #feff9c;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.6);
     transform: rotate(-2deg);
+    transition: box-shadow 0.2s ease;
 
     p {
         font-family: "Permanent Marker", cursive;
@@ -20,16 +23,24 @@
     &::before {
         position: absolute;
         content: ''; 
-        background-image: url('../images/tape-1.svg');
+        background-image: url('../images/thumbtack.svg');
         background-repeat: no-repeat;
         background-size: contain;
-        width: 5rem;  
-        height: 5rem; 
-        top: -1rem;  
-        left: 50%;
-        transform: scale(1) translateX(-50%) translateY(-50%);
+        width: 4rem;  
+        height: 4rem; 
+        top: -1.5rem;  
+        left: 45%;
+        transform: scale(1) translateX(-50%) translateY(-100%) rotate(20deg);
         transform-origin: center;
         animation: stickTape 150ms ease-in forwards;
         opacity: 0;
+    }
+
+    &.dragging::before {
+        animation: stickTapeReverse 150ms ease forwards !important;
+    }
+
+    &.dragging {
+        box-shadow: 15px 15px 15px rgba(0,0,0,0.6);
     }
 }

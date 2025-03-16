@@ -4,7 +4,7 @@ import { addSticker } from './add-sticker.js';
 export function modalForm() {
 
     //VARIABLES
-    const modal = document.querySelector('#modals');
+    const modal = document.querySelector('#modal');
     const modalCon = document.querySelector('#modal-con');
     const addMediaBtn = document.querySelector('#add-media-btn');
     const resetMediaBtn = document.querySelector('#reset-media-btn');
@@ -29,6 +29,7 @@ export function modalForm() {
         hideAllForms();
         modalCon.classList.remove('active');
         modal.style.display = 'none';
+        mediaTypeBtns.forEach(btn => btn.classList.remove('active'));
     }
 
     function outsideModal(e) {

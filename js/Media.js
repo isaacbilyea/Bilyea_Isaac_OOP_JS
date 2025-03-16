@@ -44,8 +44,13 @@ class Media {
             type: "x,y",
             inertia: true,
             bounds: window,
-            onDragStart: () => this.element.classList.add("dragging"),
-            onDragEnd: () => this.element.classList.remove("dragging")
+            onDragStart: () => {
+                this.element.classList.add("dragging");
+                this.element.style.zIndex = 1;
+            },
+            onDragEnd: () => {
+                this.element.classList.remove("dragging");
+            }
         });
     }
 }

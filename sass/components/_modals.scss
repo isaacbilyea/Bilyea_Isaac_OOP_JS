@@ -1,6 +1,6 @@
 @use '../abstracts' as a;
 
-#modals {
+#modal {
     display: none;
     position: fixed;
     top: 0;
@@ -28,8 +28,8 @@
 
         #close-modal {
             position: absolute;
-            right: 1.5rem;
-            top: 1rem;
+            right: 2rem;
+            top: 1.5rem;
             font-size: 2rem;
             cursor: pointer;
             color: #666;

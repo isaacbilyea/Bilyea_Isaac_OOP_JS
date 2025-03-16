@@ -4,10 +4,11 @@
 .photo-card {
     width: fit-content;
     position: relative;
-    max-width: 20rem;
+    max-width: 15rem;
 
     .photo-plaque {
         width: fit-content;
+        max-width: 100%;
         margin: 0;
         margin-top: 0.5rem;
         background: #fff;
@@ -26,6 +27,8 @@
             font-size: 1.5rem;
             font-weight: 700;
             margin: 0;
+            word-wrap: break-word;
+            line-height: 1.4;
         }
 
         .date {

@@ -12,7 +12,7 @@
         rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/Draggable.min.js"></script>
-    <script type="module" src="js/home.js"></script>
+    <script type="module" src="js/main.js"></script>
     <title>FrameIt 📷</title>
 </head>
 
@@ -29,7 +29,7 @@
     </div>
 
     <!-- Modal -->
-    <div id="modals">
+    <div id="modal">
         <div id="modal-con">
             <span id="close-modal">&times;</span>
             <h2>Select an Option</h2>
@@ -58,7 +58,7 @@
                         <label for="photo">Select a photo:</label>
                         <input type="file" accept="image/*" class="image-input" required>
                     </div>
-                    <input type="text" placeholder="Photographers Name" class="caption-input" required>
+                    <input type="text" placeholder="Photographers Name" class="caption-input" maxlength="35" required>
                     <div>
                         <label for="date">Select a date:</label>
                         <input type="date" id="photo-date" value="2001-04-10" required>
@@ -73,7 +73,7 @@
                         <label for="polaroid">Select a photo:</label>
                         <input type="file" accept="image/*" class="image-input" required>
                     </div>
-                    <input type="text" placeholder="Add a caption" class="caption-input" required>
+                    <input type="text" placeholder="Add a caption" class="caption-input" maxlength="50" required>
                     <div>
                         <label for="filter">Select a filter:</label>
                         <select id="filter">
@@ -91,7 +91,7 @@
 
                 <!-- Sticky Notes -->
                 <form class="media-form" id="note-form">
-                    <textarea placeholder="Write your note..." required class="caption-input"></textarea>
+                    <textarea placeholder="Write your note..." required class="caption-input" maxlength="85"></textarea>
                     <div>
                         <label for="note-colour">Select a colour:</label>
                         <select id="note-colour" required>
