@@ -1,7 +1,8 @@
 @use '../abstracts' as a;
 
-
 .sticker {
     width: fit-content;
     font-size: 3rem;
+    position: relative;
+    z-index: 999;
 }

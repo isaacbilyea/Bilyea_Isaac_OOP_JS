@@ -1,16 +1,19 @@
 @use '../abstracts' as a;
 
-
 .polaroid-card {
     padding: 1rem;
     background-color: white;
     width: fit-content;
     position: relative;
     max-width: 15rem;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    transform: rotate(0.5deg);
+    transition: box-shadow 0.2s ease;
 
     p {
         font-family: a.$caption-font-family;
         font-size: 1.5rem;
+        word-wrap: break-word;
         margin: 0;
         margin-top: 0.5rem;
     }
@@ -18,7 +21,7 @@
     &::before {
         position: absolute;
         content: ''; 
-        background-image: url('../images/tape-1.svg');
+        background-image: url('../images/tape-3.svg');
         background-repeat: no-repeat;
         background-size: contain;
         width: 7rem;  
@@ -40,6 +43,9 @@
         height: auto;
     }
 
+    &.dragging {
+        box-shadow: 15px 15px 15px rgba(0,0,0,0.6);
+    }
 
     @keyframes stickTape {
         0% { 

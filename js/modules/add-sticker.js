@@ -9,6 +9,7 @@ export function addSticker(emoji) {
     Draggable.create(stickerElement, {
         type: "x,y",
         inertia: true,
+        zIndexBoost: false,
         onDragStart: function(){
             this.target.classList.add("dragging");
         },
