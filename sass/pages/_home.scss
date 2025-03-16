@@ -15,6 +15,7 @@
     border-left-color: lighten(#000, 0%);
     box-shadow: 2px 2px 4px rgba(0,0,0,0.6);
     transition: box-shadow 0.2s ease;
+    font-family: a.$heading-font-family;
 
     &.dragging {
         box-shadow: 15px 15px 15px rgba(0,0,0,0.6);
@@ -46,6 +47,7 @@
             font-size: 1rem;
             cursor: pointer;
             transition: all 0.2s ease;
+            font-family: inherit;
         
             &:hover {
                 background: #555;
