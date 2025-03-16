@@ -1,0 +1,63 @@
+@use '../abstracts' as a;
+
+
+.photo-card {
+    width: fit-content;
+    position: relative;
+    max-width: 20rem;
+
+    .photo-plaque {
+        width: fit-content;
+        margin: 0;
+        margin-top: 0.5rem;
+        background: #fff;
+        padding: 0.5rem 3rem 0.75rem 1.25rem;
+        border-style: solid;
+        border-width: 2px;
+        border-top-color: lighten(lightgrey, 10%);
+        border-right-color: lighten(lightgrey, 5%);
+        border-bottom-color: lighten(lightgrey, 10%);
+        border-left-color: lighten(lightgrey, 5%);
+        box-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        transition: box-shadow 0.2s ease;
+        font-family: a.$body-font-family;
+
+        .caption {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .date {
+            font-size: 0.75rem;
+            font-weight: 300;
+            margin: 0;
+        }
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        background: #fff;
+        padding: 2rem;
+        border-style: solid;
+        border-width: 1rem;
+        border-top-color: lighten(#000, 20%);
+        border-right-color: lighten(#000, 0%);
+        border-bottom-color: lighten(#000, 20%);
+        border-left-color: lighten(#000, 0%);
+        box-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        transition: box-shadow 0.2s ease;
+    }
+
+    &.dragging {
+        .photo-plaque {
+            box-shadow: 15px 15px 15px rgba(0,0,0,0.6);
+        }
+
+        img {
+            box-shadow: 15px 15px 15px rgba(0,0,0,0.6);
+        }
+    }
+
+}

@@ -1,0 +1,35 @@
+@use '../abstracts' as a;
+
+
+.sticky-note {
+    width: 200px;
+    min-height: 200px;
+    padding: 1.5rem;
+    position: relative;
+    background: #feff9c;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transform: rotate(-2deg);
+
+    p {
+        font-family: "Permanent Marker", cursive;
+        font-size: 1.2rem;
+        line-height: 1.5;
+        margin: 0;
+    }
+
+    &::before {
+        position: absolute;
+        content: ''; 
+        background-image: url('../images/tape-1.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 5rem;  
+        height: 5rem; 
+        top: -1rem;  
+        left: 50%;
+        transform: scale(1) translateX(-50%) translateY(-50%);
+        transform-origin: center;
+        animation: stickTape 150ms ease-in forwards;
+        opacity: 0;
+    }
+}

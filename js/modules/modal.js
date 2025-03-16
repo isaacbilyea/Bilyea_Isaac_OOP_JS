@@ -1,4 +1,4 @@
-import { addImage } from './add-image.js';
+import { Media, Photo, Polaroid, StickyNote } from '../Media.js';
 import { addSticker } from './add-sticker.js';
 
 export function modalForm() {
@@ -8,12 +8,15 @@ export function modalForm() {
     const modalCon = document.querySelector('#modal-con');
     const addMediaBtn = document.querySelector('#add-media-btn');
     const resetMediaBtn = document.querySelector('#reset-media-btn');
-    const imageContainer = document.querySelector("#image-container");
+    const mediaBoard = document.querySelector("#media-board");
     const closeBtn = document.querySelector('#close-modal');
     const mediaTypeBtns = document.querySelectorAll('.media-type-btn');
     const mediaForms = document.querySelectorAll('.media-form, #sticker-form');
     const photoForm = document.querySelector('#photo-form');
+    const polaroidForm = document.querySelector('#polaroid-form');
+    const noteForm = document.querySelector('#note-form');
     const stickerForm = document.querySelector('#sticker-form');
+    const controls = document.querySelector('#controls-con');
 
     //FUNCTIONS
     function openModal() {
@@ -35,7 +38,7 @@ export function modalForm() {
     }
 
     function resetBoard() {
-        imageContainer.innerHTML = '';
+        mediaBoard.innerHTML = '';
     }
 
     function hideAllForms() {
@@ -64,8 +67,54 @@ export function modalForm() {
 
     function photoSubmit(e) {
         e.preventDefault();
-        addImage();
+        const imageInput = photoForm.querySelector(".image-input");
+        const captionInput = photoForm.querySelector(".caption-input");
+        const dateInput = photoForm.querySelector("#photo-date");
+
+        if (!imageInput.files[0]) return;
+
+        const photo = new Photo (
+            imageInput.files[0],
+            captionInput.value,
+            dateInput.value
+        );
+
+        photo.createContent();
         closeModal();
+        photoForm.reset();
+    }
+
+    
+    function polaroidSubmit(e) {
+        e.preventDefault();
+        const imageInput = polaroidForm.querySelector(".image-input");
+        const captionInput = polaroidForm.querySelector(".caption-input");
+        const filterSelect = polaroidForm.querySelector("#filter");
+
+        if (!imageInput.files[0]) return;
+
+        const polaroid = new Polaroid (
+            imageInput.files[0],
+            captionInput.value,
+            filterSelect.value
+        );
+        polaroid.createContent();
+        closeModal();
+        polaroidForm.reset();
+    }
+
+    function noteSubmit(e) {
+        e.preventDefault();
+        const captionInput = noteForm.querySelector(".caption-input");
+        const colourSelect = noteForm.querySelector("#note-colour");
+
+        const stickyNote = new StickyNote(
+            captionInput.value,
+            colourSelect.value
+        );
+        stickyNote.createContent();
+        closeModal();
+        noteForm.reset();
     }
 
     function stickerSubmit(e) {
@@ -73,6 +122,14 @@ export function modalForm() {
         addSticker(emoji);
         closeModal();
     }
+
+    Draggable.create(controls, {
+        type: "x,y",
+        inertia: true,
+        bounds: window,
+        onDragStart: () => controls.classList.add("dragging"),
+        onDragEnd: () => controls.classList.remove("dragging")
+    });
 
     //EVENT LISTENERS
     addMediaBtn.addEventListener('click', openModal);
@@ -85,6 +142,8 @@ export function modalForm() {
     });
 
     photoForm.addEventListener('submit', photoSubmit);
+    polaroidForm.addEventListener('submit', polaroidSubmit);
+    noteForm.addEventListener('submit', noteSubmit);
     stickerForm.addEventListener('click', (e) => {
         if (e.target.classList.contains('sticker-btn')) {
             stickerSubmit(e);

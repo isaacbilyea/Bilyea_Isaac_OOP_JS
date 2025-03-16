@@ -1,10 +1,10 @@
-@forward 'filters';
-@forward 'board';
+@forward 'forms';
 @forward 'modals';
-@use 'photo-form';
-@use 'polaroid-form';
-@use 'note-form';
-@use 'sticker-form';
+@forward 'filters';
+@forward 'photo';
+@forward 'polaroid';
+@forward 'note';
+@forward 'sticker';
 
 
 
