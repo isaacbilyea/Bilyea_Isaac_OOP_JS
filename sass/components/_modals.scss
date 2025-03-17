@@ -58,7 +58,7 @@
 
         #media-types {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
             gap: 1rem;
             margin-bottom: 2rem;
 
@@ -91,15 +91,4 @@
             }
         }
     }
-}
-
-
-@media screen and (min-width: 768px) {
-    #modal {
-
-        #modal-con {
-            margin: 2rem auto;
-        }
-    }
-    
 }
