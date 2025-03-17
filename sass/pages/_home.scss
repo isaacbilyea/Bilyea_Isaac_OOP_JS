@@ -19,8 +19,7 @@
     max-width: 300px;
     width: 95%;
     box-sizing: border-box;
-    z-index: 99999;
-
+    
     &.dragging {
         box-shadow: 15px 15px 15px rgba(0,0,0,0.6);
     }
