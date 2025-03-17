@@ -55,12 +55,12 @@
                 <!-- Photos -->
                 <form class="media-form" id="photo-form">
                     <div>
-                        <label for="photo">Select a photo:</label>
-                        <input type="file" accept="image/*" class="image-input" required>
+                        <label for="photo-input">Select a photo:</label>
+                        <input type="file" accept="image/*" id="photo-input" class="image-input" required>
                     </div>
                     <input type="text" placeholder="Photographers Name" class="caption-input" maxlength="35" required>
                     <div>
-                        <label for="date">Select a date:</label>
+                        <label for="photo-date">Select a date:</label>
                         <input type="date" id="photo-date" value="2001-04-11" required>
                     </div>
 
@@ -70,8 +70,8 @@
                 <!-- Polaroids -->
                 <form class="media-form" id="polaroid-form">
                     <div>
-                        <label for="polaroid">Select a photo:</label>
-                        <input type="file" accept="image/*" class="image-input" required>
+                        <label for="polaroid-input">Select a photo:</label>
+                        <input type="file" accept="image/*" id="polaroid-input" class="image-input" required>
                     </div>
                     <input type="text" placeholder="Add a caption" class="caption-input" maxlength="50" required>
                     <div>
@@ -94,7 +94,7 @@
                     <textarea placeholder="Write your note..." required class="caption-input" maxlength="85"></textarea>
                     <div>
                         <label for="note-colour">Select a colour:</label>
-                        <select id="note-colour" required>
+                        <select id="note-colour">
                             <option value="#FFF9A8">Yellow</option>
                             <option value="#FFC0CB">Pink</option>
                             <option value="#A7C7E7">Blue</option>
