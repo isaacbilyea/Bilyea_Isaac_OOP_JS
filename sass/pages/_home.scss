@@ -66,15 +66,3 @@
     }
 }
 
-#media-board {
-    height: 100%;
-    position: relative;
-
-    .photo-card, .polaroid-card, .sticky-note, .sticker {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        box-sizing: border-box;
-        transform: translate(-50%, -50%);
-    }
-}
