@@ -26,16 +26,17 @@
         background-size: contain;
         width: 7rem;  
         height: 7rem; 
-        top: -1.25rem;  
+        top: -1.5rem;  
         left: 50%;
         transform: scale(1) translateX(-50%) translateY(-100%) rotate(20deg);
         transform-origin: center;
-        animation: stickTape 150ms ease-in forwards;
+        animation: stickTape 100ms ease-in forwards;
         opacity: 0;
+        z-index: 5;
     }
 
     &.dragging::before {
-        animation: stickTapeReverse 150ms ease forwards !important;
+        animation: stickTapeReverse 100ms ease-in forwards;
     }
     
     img {
@@ -49,28 +50,11 @@
 
     @keyframes stickTape {
         0% { 
-            transform: scale(1.2) translate(-40%, 20%) rotate(7deg);
+            transform: scale(1.03) translate(-46%, 3%) rotate(0.1deg);
             opacity: 1;
         }
-        20% {
-    
-            transform: scale(1.15) translate(-42%, 15%) rotate(5deg);
-        }
-        40% {
-     
-            transform: scale(1.1) translate(-45%, 10%) rotate(7deg);
-        }
-        60% {
-       
-            transform: scale(1.05) translate(-48%, 5%) rotate(4deg);
-        }
-        75% {
-            transform: scale(1.02) translate(-50%, 2%) rotate(4deg);
-     
-        }
-        90% {
-            transform: scale(1.01) translate(-50%, 1%) rotate(2deg);
-           
+        50% {
+            transform: scale(1.015) translate(-48%, 2%) rotate(0deg);
         }
         100% { 
             transform: scale(1) translate(-50%, 0%) rotate(0);
@@ -83,9 +67,13 @@
             transform: scale(1) translate(-50%, 0%) rotate(0);
             opacity: 1;
         }
+        50% {
+            transform: scale(1.015) translate(-48%, 2%) rotate(0deg);
+            opacity: 1;
+        }
         100% { 
-            transform: scale(1.1) translate(-50%, 10%) rotate(10deg);
-            opacity: 0;
+            transform: scale(1.03) translate(-46%, 3%) rotate(0.1deg);
+            opacity: 1;
         }
     }
 }

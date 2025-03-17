@@ -16,6 +16,10 @@
     box-shadow: 2px 2px 4px rgba(0,0,0,0.6);
     transition: box-shadow 0.2s ease;
     font-family: a.$heading-font-family;
+    max-width: 500px;
+    width: 95%;
+    box-sizing: border-box;
+    z-index: 99999;
 
     &.dragging {
         box-shadow: 15px 15px 15px rgba(0,0,0,0.6);
@@ -30,6 +34,7 @@
         margin: 0;
         font-size: 1rem;
         font-weight: 300;
+        text-align: center;
     }
 
     #controls {
@@ -60,3 +65,4 @@
         }
     }
 }
+

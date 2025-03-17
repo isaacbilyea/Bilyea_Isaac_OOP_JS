@@ -32,12 +32,12 @@
         left: 45%;
         transform: scale(1) translateX(-50%) translateY(-100%) rotate(20deg);
         transform-origin: center;
-        animation: stickTape 150ms ease-in forwards;
+        animation: stickTape 100ms ease-in forwards;
         opacity: 0;
     }
 
     &.dragging::before {
-        animation: stickTapeReverse 150ms ease forwards !important;
+        animation: stickTapeReverse 100ms ease-in forwards;
     }
 
     &.dragging {

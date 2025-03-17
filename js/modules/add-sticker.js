@@ -10,11 +10,16 @@ export function addSticker(emoji) {
         type: "x,y",
         inertia: true,
         zIndexBoost: false,
+        bounds: window,
         onDragStart: function(){
             this.target.classList.add("dragging");
         },
         onDragEnd: function() {
             this.target.classList.remove("dragging");
         }
+    });
+
+    window.addEventListener("resize", () => {
+        Draggable.get(stickerElement).applyBounds();
     });
 }

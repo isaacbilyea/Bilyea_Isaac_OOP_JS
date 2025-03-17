@@ -131,6 +131,7 @@ export function modalForm() {
         onDragStart: () => controls.classList.add("dragging"),
         onDragEnd: () => controls.classList.remove("dragging")
     });
+    
 
     //EVENT LISTENERS
     addMediaBtn.addEventListener('click', openModal);
@@ -140,6 +141,10 @@ export function modalForm() {
     
     mediaTypeBtns.forEach(btn => {
         btn.addEventListener('click', selectMediaType);
+    });
+
+    window.addEventListener("resize", () => {
+        Draggable.get(controls).applyBounds();
     });
 
     photoForm.addEventListener('submit', photoSubmit);
