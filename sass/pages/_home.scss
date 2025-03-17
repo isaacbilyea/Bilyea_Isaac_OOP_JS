@@ -16,6 +16,10 @@
     box-shadow: 2px 2px 4px rgba(0,0,0,0.6);
     transition: box-shadow 0.2s ease;
     font-family: a.$heading-font-family;
+    max-width: 500px;
+    width: 95%;
+    box-sizing: border-box;
+    z-index: 99999;
 
     &.dragging {
         box-shadow: 15px 15px 15px rgba(0,0,0,0.6);
@@ -30,6 +34,7 @@
         margin: 0;
         font-size: 1rem;
         font-weight: 300;
+        text-align: center;
     }
 
     #controls {
@@ -58,5 +63,18 @@
                 transform: translateY(2px);
             }
         }
+    }
+}
+
+#media-board {
+    height: 100%;
+    position: relative;
+
+    .photo-card, .polaroid-card, .sticky-note, .sticker {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        box-sizing: border-box;
+        transform: translate(-50%, -50%);
     }
 }

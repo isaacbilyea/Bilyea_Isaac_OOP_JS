@@ -39,11 +39,12 @@ class Media {
         this.element.appendChild(date);
     }
 
+
     makeDraggable() {
         Draggable.create(this.element, {
             type: "x,y",
             inertia: true,
-            bounds: window,
+            bounds: window, 
             onDragStart: () => {
                 this.element.classList.add("dragging");
                 this.element.style.zIndex = 1;
@@ -51,6 +52,10 @@ class Media {
             onDragEnd: () => {
                 this.element.classList.remove("dragging");
             }
+        });
+    
+        window.addEventListener("resize", () => {
+            Draggable.get(this.element).applyBounds();
         });
     }
 }
@@ -89,7 +94,6 @@ class Photo extends Media {
         this.addToBoard();
     }
 }
-
 
 class Polaroid extends Media {
     constructor(imageFile, caption, filter) {
