@@ -1,10 +1,9 @@
 import { Media } from './Media.js';
 
 class Sticker extends Media {
-    constructor(emoji) {
-        super('');
+    constructor(emoji, className) {
+        super('', className);
         this.emoji = emoji;
-        this.element.classList.add('sticker');
     }
 
     createContent() {

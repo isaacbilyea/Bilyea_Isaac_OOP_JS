@@ -1,16 +1,20 @@
 import { Media } from '../classes/Media.js';
 
 class Photo extends Media {
-    constructor(imageFile, caption, date) {
-        super(caption);
+    constructor(imageFile, caption, date, className) {
+        super(caption, className);
         this.imageFile = imageFile;
         this.element.classList.add('photo-card');
         this.date = date;
     }
 
     createContent() {
-        const img = this.addImage(this.imageFile);
-        
+        this.addImage(this.imageFile);
+        this.addPhotoPlaque();
+        super.addToBoard();
+    }
+
+    addPhotoPlaque() {
         const photoPlaque = document.createElement('div');
         photoPlaque.classList.add('photo-plaque');
         
@@ -21,18 +25,20 @@ class Photo extends Media {
 
         const date = document.createElement("p");
         date.classList.add('date');
-        const formattedDate = new Date(this.date).toLocaleDateString('en-US', {
+        date.textContent = this.formatDate();
+        photoPlaque.appendChild(date);
+
+        this.element.appendChild(photoPlaque);
+    }
+
+    formatDate() {
+        return new Date(this.date).toLocaleDateString('en-US', {
             month: 'short',
             day: 'numeric',
             year: 'numeric'
         });
-        date.textContent = formattedDate;
-        photoPlaque.appendChild(date);
-
-        this.element.appendChild(photoPlaque);
-        
-        this.addToBoard();
     }
+
 }
 
 export { Photo };

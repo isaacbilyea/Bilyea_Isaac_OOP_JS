@@ -1,8 +1,10 @@
 class Media {
-    constructor(caption) {
+    constructor(caption, className) {
         this.container = document.querySelector("#media-board");
         this.element = document.createElement("div");
         this.caption = caption;
+        this.className = className;
+        this.element.classList.add(className);
     }
 
     addToBoard() {
@@ -13,6 +15,7 @@ class Media {
     addImage(imageFile) {
         const img = document.createElement("img");
         img.src = URL.createObjectURL(imageFile);
+        img.alt = this.caption;
         img.style.display = "block";
         this.element.appendChild(img);
         return img;
@@ -25,20 +28,10 @@ class Media {
         this.element.appendChild(caption);
     }
 
-    addDate() {
-        const date = document.createElement("p");
-        date.classList.add('date');
-
-        const formattedDate = new Date(this.date).toLocaleDateString('en-US', {
-            month: 'short',
-            day: 'numeric',
-            year: 'numeric'
-        });
-        
-        date.textContent = formattedDate;
-        this.element.appendChild(date);
+    createContent() {
+        this.addCaption();
+        this.addToBoard();
     }
-
 
     makeDraggable() {
         Draggable.create(this.element, {

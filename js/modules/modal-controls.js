@@ -1,10 +1,10 @@
-import { closeModal } from "./close-modal.js";
+import { closeModal } from "./modal-close.js";
+import { animateModalOpen } from './modal-gsap.js';
 
 export function modalControls() {
 
     //VARIABLES
     const modal = document.querySelector('#modal');
-    const modalCon = document.querySelector('#modal-con');
     const mediaBoard = document.querySelector("#media-board");
     const mediaForms = document.querySelectorAll('.media-form, #sticker-form');
     const addMediaBtn = document.querySelector('#add-media-btn');
@@ -17,7 +17,7 @@ export function modalControls() {
     function openModal() {
         hideAllForms();
         modal.style.display = 'block';
-        modalCon.classList.add('active');
+        animateModalOpen();
     }
 
     function outsideModal(e) {
@@ -58,14 +58,18 @@ export function modalControls() {
         type: "x,y",
         inertia: true,
         bounds: window,
-        onDragStart: () => controls.classList.add("dragging"),
-        onDragEnd: () => controls.classList.remove("dragging")
+        onDragStart: () => {
+            controls.classList.add("dragging")
+        },
+        onDragEnd: () => {
+            controls.classList.remove("dragging")
+        }
     });
 
     window.addEventListener("resize", () => {
         Draggable.get(controls).applyBounds();
     });
-    
+
     //EVENT LISTENERS
     addMediaBtn.addEventListener('click', openModal);
     resetMediaBtn.addEventListener('click', resetBoard);
