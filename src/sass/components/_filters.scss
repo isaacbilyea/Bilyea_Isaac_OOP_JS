@@ -1,0 +1,27 @@
+.no-filter {
+    filter: none;
+}
+
+.sepia {
+    filter: sepia(100%);
+}
+
+.grayscale {
+    filter: grayscale(100%);
+}
+
+.vintage {
+    filter: sepia(30%) contrast(110%) brightness(110%) saturate(130%);
+}
+
+.blur {
+    filter: blur(2px);
+}
+
+.contrast {
+    filter: contrast(150%);
+}
+
+.bright {
+    filter: brightness(130%) saturate(120%);
+}
