@@ -1,3 +1,5 @@
-import { modalForm } from './modules/modal.js';
+import { forms } from './modules/forms.js';
+import { modalControls } from './modules/modal-controls.js';
 
-modalForm();
+forms();
+modalControls();
