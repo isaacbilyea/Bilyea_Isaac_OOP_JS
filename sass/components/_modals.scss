@@ -1,0 +1,94 @@
+@use '../abstracts' as a;
+
+#modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999; 
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    #modal-con {
+        background: white;
+        width: 75%;
+        margin: 2rem auto;
+        top: 2rem;
+        padding: 2rem;
+        max-width: 600px;
+        border-radius: 1rem;
+        position: relative;
+        transform: translateY(-20px);
+        opacity: 0;
+        transition: all 0.3s ease-out;
+
+        &.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        #close-modal {
+            position: absolute;
+            right: 2rem;
+            top: 1.5rem;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #666;
+            
+            &:hover {
+                color: a.$secondary-color;
+            }
+        }
+
+        h2 {
+            margin-bottom: 2rem;
+            margin-top: 0;
+            color: a.$secondary-color;
+        }
+
+        #media-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+
+            .media-type-btn {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 1rem;
+                border: 2px solid a.$primary-color;
+                border-radius: 0.5rem;
+                background: white;
+                cursor: pointer;
+                transition: all 0.2s ease;
+
+                span {
+                    font-size: 2rem;
+                    margin-bottom: 0.5rem;
+                }
+
+                &:hover {
+                    border-color: a.$secondary-color;
+                    background: #f9f9f9;
+                }
+
+                &.active {
+                    border-color: a.$secondary-color;
+                    background: a.$secondary-color;
+                    color: white;
+                }
+            }
+        }
+    }
+}
