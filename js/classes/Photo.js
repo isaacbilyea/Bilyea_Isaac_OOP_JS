@@ -35,7 +35,8 @@ class Photo extends Media {
         return new Date(this.date).toLocaleDateString('en-US', {
             month: 'short',
             day: 'numeric',
-            year: 'numeric'
+            year: 'numeric',
+            timeZone: 'UTC'
         });
     }
 
