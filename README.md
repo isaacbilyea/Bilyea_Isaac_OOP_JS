@@ -1,6 +1,6 @@
 # FrameIt - Interactive Digital Memory Board 📷
 
-![Readme Photo](/images/readme.webp)
+![Readme Photo](src/images/readme.webp)
 
 Welcome to FrameIt! This project demonstrates object-oriented JavaScript principles through an interactive digital memory board. Users can create and arrange various media types, offering a customizable and engaging experience for organizing digital memories.
 
