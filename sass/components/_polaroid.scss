@@ -1,19 +1,19 @@
 @use '../abstracts' as a;
 
 .polaroid-card {
-    padding: 1rem;
+    padding: 0.75rem;
     background-color: white;
     width: fit-content;
     position: relative;
-    max-width: 15rem;
+    min-width: fit-content;
+    max-width: 8rem;
     box-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-    transform: rotate(0.5deg);
+    transform: translate(-50%, -50%) rotate(0.5deg);
     transition: box-shadow 0.2s ease;
 
     p {
         font-family: a.$caption-font-family;
-        font-size: 1.5rem;
-        word-wrap: break-word;
+        font-size: 0.9rem;
         margin: 0;
         margin-top: 0.5rem;
     }
@@ -21,11 +21,11 @@
     &::before {
         position: absolute;
         content: ''; 
-        background-image: url('../images/tape-3.svg');
+        background-image: url('../images/tape-1.svg');
         background-repeat: no-repeat;
         background-size: contain;
-        width: 7rem;  
-        height: 7rem; 
+        width: 6rem;  
+        height: 6rem; 
         top: -1.5rem;  
         left: 50%;
         transform: scale(1) translateX(-50%) translateY(-100%) rotate(20deg);
@@ -35,13 +35,35 @@
         z-index: 5;
     }
 
+    &:nth-of-type(2)::before {
+        background-image: url('../images/tape-2.svg');
+    }
+
+    &:nth-of-type(3)::before {
+        background-image: url('../images/tape-3.svg');
+    }
+
+    &:nth-of-type(4)::before {
+        background-image: url('../images/tape-4.svg');
+    }
+
+    &:nth-of-type(5)::before {
+        background-image: url('../images/tape-5.svg');
+    }
+
+    &:nth-of-type(6)::before {
+        background-image: url('../images/tape-6.svg');
+    }
+
     &.dragging::before {
         animation: stickTapeReverse 100ms ease-in forwards;
     }
     
     img {
         max-width: 100%;
+        min-width: 100%;
         height: auto;
+        max-height: 15rem;
     }
 
     &.dragging {
@@ -75,5 +97,36 @@
             transform: scale(1.03) translate(-46%, 3%) rotate(0.1deg);
             opacity: 1;
         }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .polaroid-card {
+        max-width: 10rem;
+        padding: 0.75rem;
+
+        p {
+            font-size: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        &::before {
+            width: 7rem;
+            height: 7rem;
+            top: -1.65rem;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .polaroid-card {
+        max-width: 12rem;
+        padding: 1rem;
+
+        p {
+            font-size: 1.25rem;
+            margin-top: 0.75rem;
+        }
+
     }
 }

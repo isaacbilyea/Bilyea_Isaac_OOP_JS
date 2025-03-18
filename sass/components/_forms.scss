@@ -29,9 +29,10 @@
     }
 
     textarea {
-        min-height: 10rem;
+        min-height: 9rem;
         resize: vertical;
         line-height: 1.5;
+        font-size: 0.8rem;
     }
 
     button[type="submit"] {
