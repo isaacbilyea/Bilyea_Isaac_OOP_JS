@@ -24,6 +24,10 @@ class Sticker extends Media {
                 this.element.classList.remove("dragging");
             }
         });
+
+        window.addEventListener("resize", () => {
+            Draggable.get(this.element).applyBounds();
+        });
     }
 }
 
