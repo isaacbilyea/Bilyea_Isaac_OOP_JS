@@ -5,8 +5,7 @@
     background-color: white;
     width: fit-content;
     position: relative;
-    min-width: fit-content;
-    max-width: 8rem;
+    max-width: 10rem;
     box-shadow: 2px 2px 4px rgba(0,0,0,0.6);
     transform: translate(-50%, -50%) rotate(0.5deg);
     transition: box-shadow 0.2s ease;
@@ -16,6 +15,8 @@
         font-size: 0.9rem;
         margin: 0;
         margin-top: 0.5rem;
+        word-wrap: break-word;
+        width: 100%;
     }
 
     &::before {
@@ -98,7 +99,7 @@
 
 @media screen and (min-width: 768px) {
     .polaroid-card {
-        max-width: 10rem;
+        max-width: 12rem;
         padding: 0.75rem;
 
         p {
@@ -116,7 +117,7 @@
 
 @media screen and (min-width: 1200px) {
     .polaroid-card {
-        max-width: 12rem;
+        max-width: 15rem;
         padding: 1rem;
 
         p {

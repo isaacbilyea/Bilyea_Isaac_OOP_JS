@@ -48,7 +48,9 @@ export function modalControls() {
         const clickedBtn = e.currentTarget;
         const mediaType = clickedBtn.dataset.type;
         
-        mediaTypeBtns.forEach(btn => btn.classList.remove('active'));
+        mediaTypeBtns.forEach(btn => {
+            btn.classList.remove('active');
+        });
         clickedBtn.classList.add('active');
         
         showSelectedForm(mediaType);
@@ -59,10 +61,10 @@ export function modalControls() {
         inertia: true,
         bounds: window,
         onDragStart: () => {
-            controls.classList.add("dragging")
+            controls.classList.add("dragging");
         },
         onDragEnd: () => {
-            controls.classList.remove("dragging")
+            controls.classList.remove("dragging");
         }
     });
 

@@ -13,6 +13,7 @@ export function forms() {
     const noteForm = document.querySelector('#note-form');
     const stickerForm = document.querySelector('#sticker-form');
 
+    //FUNCTIONS
     function photoSubmit(e) {
         e.preventDefault();
         const imageInput = photoForm.querySelector(".image-input");
@@ -76,9 +77,5 @@ export function forms() {
     photoForm.addEventListener('submit', photoSubmit);
     polaroidForm.addEventListener('submit', polaroidSubmit);
     noteForm.addEventListener('submit', noteSubmit);
-    stickerForm.addEventListener('click', (e) => {
-        if (e.target.classList.contains('sticker-btn')) {
-            stickerSubmit(e);
-        }
-    });
+    stickerForm.addEventListener('click', stickerSubmit);
 }
